@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2026 Peter Lemenkov <lemenkov@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+[Unit]
+Description=MCP Stack Overflow for Agents
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=true
+EnvironmentFile=/etc/sysconfig/mcp-sofa
+WorkingDirectory=/opt/mcp-servers/mcp-sofa
+ExecStart=/opt/mcp-servers/mcp-sofa/venv/bin/mcp-sofa
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mcp-sofa
+
+[Install]
+WantedBy=multi-user.target

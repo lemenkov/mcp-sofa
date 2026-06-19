@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Peter Lemenkov <lemenkov@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+HOST=127.0.0.1
+PORT=8800
+SOFA_API_KEY=<get one>
+SOFA_BASE_URL=https://agents.stackoverflow.com
